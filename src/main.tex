@@ -1,0 +1,237 @@
+\documentclass[11p]{article}
+% Packages
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{fancyheadings}
+\usepackage[swedish]{babel}
+\usepackage[
+    backend=biber,
+    style=authoryear-ibid,
+    sorting=ynt
+]{biblatex}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+%Källor
+\addbibresource{references.bib}
+\graphicspath{ {./images/} }
+
+% Lite variabler
+\def\email{Gabrielnilsson.hogb@elev.ga.ntig.se}
+\def\foottitle{}
+\def\name{Gabriel Nilsson Högberg}
+
+\title{Webbtillgänglighet: En studie om olika kommunala webbplatser i Sverige \\ \small Gymnasiearbete}
+\author{\name}
+\date{\today}
+
+\begin{document}
+
+% fixar sidfot
+    \lfoot{\footnotesize{\name \\ \email}}
+    \rfoot{\footnotesize{\today}}
+    \lhead{\sc\footnotesize\foottitle}
+    \rhead{\nouppercase{\sc\footnotesize\leftmark}}
+    \pagestyle{fancy}
+    \renewcommand{\headrulewidth}{0.2pt}
+    \renewcommand{\footrulewidth}{0.2pt}
+
+% i Sverige har vi normalt inget indrag vid nytt stycke
+    \setlength{\parindent}{0pt}
+% men däremot lite mellanrum
+    \setlength{\parskip}{10pt}
+
+    \maketitle
+    
+    \section{Inledning}
+    Webben som vi känner till idag har blivit en av världens mest använda verktyg sedan det släpptes för allmänheten i 1993.
+    I världen är det runt 4,39 miljarder personer som använder sig av internet vilket är över hälften av den globala populationen \textcite{history_WWW}.
+    I Sverige är det runt 95 procent som använder sig av internet \textcite{SCB} och att så många personer använder internet ställer allt större krav på att webbplatserna ska fungera så att alla kan använda dem på ett bekvämt sätt.
+    Detta gör även att det ställs ett större krav på att webbsidorna ska vara tillgängliga.
+    Ett stort ansvar hamnar då på kommunala webbsidor att webbplatsen ska vara tillgänglig oavsett vilken enhet man använder.
+    Ett extremt stort spektrum av behov behövs täckas för att kalla en webbsida tillgänglig.
+
+    Den svenska myndigheten för digital förvaltning (DIGG) ger denna anledning till varför fokuset på tillgänglighet är viktigt:
+
+    ``Omkring 16 procent av den globala befolkningen uppskattas att ha en signifikant funktionsnedsättning och denna siffra fortsätter att öka bland annat med åldrande befolkning.
+    För personer med funktionsnedsättning kan god tillgänglighet vara helt avgörande för att kunna ta del av information eller utföra ett ärende på en offentlig webbplats \textcite{Digg_tillganglighet}.
+    ``
+
+    World Wide Web Consortium (W3C) arbetar med att förbättra Web content accessibility guidelines (WCAG) för att ge en standard om tillgänglighet på webben och för webbutvecklare.
+    Många använder sig av denna standard för att skapa sin egna sida från ett tillgänglighets perspektiv.
+    Jag anser att det skulle vara intressant att undersöka svenska kommunala webbsidor och ifall dem följer tillgänglighetsstandarderna WCAG 2.0 och 2.1 och jämföra dem med andra kommuners webbsidor.
+    
+    \section{Syfte och Frågeställning}
+    I denna undersökning kommer följande sidor att undersökas:
+
+    \begin{itemize}
+        \item eslov.se
+        \item goteborg.se
+        \item helsingborg.se
+        \item huddinge.se
+    \end{itemize}
+
+    Utifrån dessa frågeställningar:
+
+    \begin{itemize}
+        \item Möter webbsidan tillgänglighetskriterier som står i WCAG 2.0 och 2.1?
+        \item Vilka kriterier misslyckades webbsidorna mest med?
+        \item Vilken prestanda, tillgänglighet och hur god praxis följer webbsidorna.
+    \end{itemize}
+
+    Undersökningen kommer att ta reda på hur sidorna möter kriterierna samtidigt som prestanda, tillgänglighet och bästa praxis kommer att mätas med hjälp av ett antal automatiserade tester.
+
+    Syftet för själva undersökningen och varför detta är viktigt att undersöka är för att ge så många som möjligt möjligheten att kunna använda internet på ett tillräckligt bra sätt utan att utsättas för onödiga svårigheter.
+    Detta är speciellt viktigt för de offentliga webbsidorna.
+
+    \section{Vad är webbtillgänglighet?}
+    Tillgänglighets aspekter kan skilja från person till person men vad exakt tillgänglighet är kan vara svårt att sätta fingret på men för denna studie används Steve Krug och hans egna definition av webbtillgänglighet i sin bok Don't Make Me Think revisited: A Common Sense Approach to Web Usability \textcite{Krug}.
+    Hans definition är följande:
+
+
+    ``Du kommer hitta olika definitioner av användbarhet men ofta bryts det ned i olika punkter som;``
+
+    \begin{itemize}
+        \item Användbar: Gör den något som användaren behöver?
+        \item Lärbar: Kan användaren lära sig hur man använder detta?
+        \item Minnesvärd: Behöver användaren lära sig om denna sak varje gång den används?
+        \item Effektiv: Får den jobbet gjort på en rimlig tid med den insats som denna användare gör?
+        \item Önskvärd: Vill användaren ha detta?
+        \item Trevlig: Tycker användaren att detta är trevligt eller till och med roligt att använda?
+    \end{itemize}
+
+    När något är användbart ska alltså en person som har erfarenheter och förmågor kunna lista ut hur man använder en produkt utan att det ska ta för mycket tid och energi än vad som egentligen behövs.
+
+    \subsection{Alt-Taggar}
+    En alt-tagg är en alternativ text till olika element på en webbsida och ska förklara och ge kontext till vad den är kopplad till.
+    Ett bra exempel för detta är på bilder som kan berätta vad som är på bilden och ge kontext varför den är här på sidan \textcite{Nordström}.
+
+    \subsection{WAI-ARIA}
+    WAI-ARIA används för att göra webbinnehåll mer tillgängligt för personer som använder hjälpmedel som skärmläsare och har blivit en teknisk standard. \textcite{ARIA}
+
+
+    \subsection{Kontraster}
+    Ett av de vanligare felen som kan uppstå på webbsidor är dåliga kontraster.
+    Olika kontrastfel uppstår då det är svårt att se innehållet på grund av färgerna på webbsidan.
+    Detta kan vara en text som inte syns på grund av att bakgrundsfärgen har för dålig konstrast jämfört med själva texten.
+    Detta gör att ett stort problem uppstår speciellt för de som har synnedsättning eller nedsatt färgseende \textcite{Digg_2021}.
+
+    \section{Vad är World Wide Web Consortium? (W3C)}
+    World Wide Web Consortium även förkortat till W3C skapades av Tim Burners-Lee och arbetar med att skapa en webb som är tillgänglig för alla.
+    W3C skapar och utvecklar olika webbstandarder för att uppnå detta.
+    W3Cs egna dokument om Web Content Accessibility Guidelines har blivit standarden inom webbutvecklings industrin \textcite{W3C}.
+
+    \subsection{Vad är Web Content Accessibility Guidelines? (WCAG)}
+    Web Content Accessibility Guidelines är ett dokument gjort av W3C som har riktlinjer på hur vi ska göra webben tillgänglig för så många som möjligt.
+    W3C beskriver själv vilka områden som WCAG ska behandla:
+
+    ``Genom att följa dessa riktlinjer kommer innehållet att bli mer tillgängligt för en större andel av personer med funktionsnedsättning, inklusive hjälpmedel för blindhet och nedsatt syn, dövhet och hörselnedsättning, begränsad rörelse, talsvårigheter, ljuskänslighet och kombinationer av dessa, och vissa hjälpmedel för inlärningssvårigheter och kognitiva begränsningar; men kommer inte att tillgodose alla användarbehov för personer med dessa funktionshinder.`` \textcite{WCAG}
+
+    WCAG har även olika krav som indelas i möjlighet att uppfatta, hanterbarhet, begriplighet och hur robust en sida är.
+    Möjlighet att uppfatta innehåller att en person ska kunna uppfatta sidan och att innehållet ska kunna presenteras på olika sätt som t.ex text kan konverteras till större stil.
+    Hanterbarhet innebär att sidan ska kunna navigeras utan mus, alltså med tangentbord eller andra hjälpmedel.
+    Begripligheten för sidan ska vara att det finns inmatningsstöd som hjälper användaren undvika eller rätta till misstag.
+    Till sist ska sidan vara robust, innehållet ska vara robust för ett brett spektrum av användarprogram inklusive hjälpmedel som skärmläsare.
+    Alla dessa krav tillsammans gör att en sida kan vara så användarvänlig och tillgänglig för dem flesta personerna. \textcite{Digg_2023}
+
+    \subsection{Vad är Webb Accessibility Initiative? (WAI)}
+    WAI är ett initiativ från W3C som är till för att öka prioriteten för användbarhet för dem med funktionsnedsättningar.
+    Initiativet utvecklas genom att arbeta med olika industrier, organisationer, regeringar och mer för att runt om i världen göra webben mer tillgänglig.
+    WAI har några primära aktiviteter som:
+
+    \begin{itemize}
+        \item Garantera att W3C standarder utvecklas med tankar för tillgänglighet
+        \item Utveckla tillgänglighets riktlinjer för webben och appar
+        \item Utveckla resurser för att förbättra webbtillgänglighets utvärderingar
+        \item Fortsätta lära ut om webbtillgänglighet
+        \item Samarbeta med undersökningar och andra utvecklingar som kan påverka webbtillgänglighet i framtiden
+        \item Påverka fler att tänka på webbtillgänglighetsstandarder
+    \end{itemize}
+
+    \textcite{WAI}
+    
+    \subsection{AChecker}
+    AChecker är ett tillgänglighetsverktyg som Web Accessibility Initiative (WAI) beskriver som.
+
+    "Interaktiv, internationell och justerbar webbtillgänglighetsgranskare.
+    AChecker tillåter användare att göra sina egna riktlinjer och bearbeta sina egna tillgänglighets granskningar.
+    Detta är baserat på Open Accessibility Checks (OAC)" \textcite{AChecker}
+
+    AChecker använder olika riktlinjer och standarder för att kontrollera att en webbsida möter dessa standarder och riktlinjer som testet använder sig av.
+    Efter att verktyget granskat webbsidan presenteras resultat i tre olika nivåer.
+
+    \begin{itemize}
+        \item Kända problem: Problem som programmet hittar och vet är fel på webbsidan
+        \item Sannolika problem: Problem som kan vara fel men behövs kollas manuellt
+        \item Potentiella problem: Problem som programmet inte själv kan förstå eller hantera och måste också manuellt kollas ifall det verkligen är ett fel.
+    \end{itemize}
+    
+    \subsection{Web Accessibility Evaluation Tools (WAVE)}
+    Web Accessibility Evaluation Tools (WAVE) är ett tillgänglighetsverktyg som går att lägga till i chrome som en extension.
+    WAVE skapades 2001 av Webb Accessibility In Mind (webAIM) i Utah State University \textcite{WAVE}.
+    Programmet i sig använder sig av WCAG som riktlinjes standard och som webbsidorna testas på.
+    WAVE är även uppskriven i WAI tillgänglighetsprogram listan som rekommenderas att använda.
+
+    \subsection{Lighthouse}
+    Lighthouse är gjort av Google och är ett verktyg till för att undersöka webbsidor i fem olika kategorier och sedan lägger ett betyg på en skala mellan 0 - 100.
+    Det fem olika kategorierna som undersöks av lighthouse är: prestanda, tillgänglighet, bästa praxis, sökmotoroptimering (SEO) och progressiv webbapp.
+    Man får även kommentarer och sedan säger den till om vad som är fel med någon av dessa fem olika kategorier.
+    
+    \subsection{Sveriges arbete med tillgänglighet}
+    Sveriges arbete med tillgänglighet på webben baseras på de lagar som Sverige använder sig av.
+    Lagen om Digital offentlig Service (DOS-lagen) handlar om att den offentliga sektorn följa denna lag.
+    För att kunna uppnå kraven som DOS-lagen innehåller rekommenderar DIGG att följa den europeiska standarden EN 301 549 som hänvisar till WCAG 2.1 på AA nivå \textcite{Digg_Dos}.
+    Däremot rekommenderas det att en webbsida ska uppnå kraven till AAA nivå.
+    EN 301 549 innehåller alltså fler kriterier som ska följas av offentliga webbsidor.
+
+    \section{Metod}
+    Tillgänglighetsstandarden idag har utökats enormt och förbättrar användarupplevelsen för alla.
+    Inom Sverige har vi WCAG som riktlinjer och webbsidor bör följa och även uppnå de krav som riktlinjerna ger \textcite{Digg}.
+    Det är för allas bästa att dessa används för att förbättra sina och andras webbsidor så att alla kan använda dem.
+
+    \begin{itemize}
+        \item Med hjälp av programmet AChecker går det att kontrollera en webbsida på WCAG 2.0 kraven och alla tre nivåer A, AA och AAA. Dessa nivåer anger ambitionsnivån på sidan och grunden för tillgänglighetskrav är AA.
+        \item Ett manuellt test kommer att göras för att utöka kraven till WCAG 2.1, alltså krav som inte står i WCAG 2.0 med hjälp av WAVE.
+        \item Det manuella testet kommer att undersöka ifall ARIA-referenser fungerar och om det finns alt-taggar på bilder, loggor och mer.
+        \item Lighthouse kommer att användas för att kolla sidornas prestanda, tillgänglighet och praxis.
+    \end{itemize}
+
+    För att undvika mänskliga misstag under undersökningen används utvärderingsverktyg.
+    Det manuella testet kommer att göras eftersom det inte finns tillräckligt bra verktyg som kontrollerar WCAG 2.1 kriterierna.
+    WAVE kommer att användas för att effektivisera manuella undersökningen med kontraster, ARIA-referenser och alt-taggar.
+    Till sist kommer Lighthouse användas för att hitta problem som inte kan hittas av utvärderingsverktyg eller den manuella kontrollen.
+
+    \subsection{Val av sidor}
+    Sidorna som valdes för denna undersökning är:
+
+    \begin{itemize}
+        \item eslov.se
+        \item goteborg.se
+        \item helsingborg.se
+        \item huddinge.se
+    \end{itemize}
+
+    \subsection{AChecker}
+    AChecker är en rekommendation från \textcite{AChecker} och används som en av tillgänglighets programmen för webbutvecklare.
+    Programmet underlättar undersökningen av kraven inom WCAG 2.0 på alla tre nivåer A, AA och AAA.
+
+    \subsection{Lighthouse}
+    Sidorna som testas kommer köras 2 gånger med lighthouse för att få så bra data som möjligt på webbsidorna.
+    Appar och annat kommer stängas av för att inte påverka och ifall något program är igång kommer det att skrivas ned.
+    Sidorna körs två gånger för att kontrollera om det uppstår någon skillnad i resultaten.
+
+    \subsection{Det manuella testet}
+    Det manuella testet kommer att undersöka WCAG 2.1 eftersom programmen använt hittills inte täcker de kraven som står där.
+    Därför kommer WAVE användas för att kolla ARIA-referenser, kontraster och sidornas kodstruktur.
+
+    \subsection{Alt-taggar}
+    För att undersöka alt-taggar kommer DevTools (inspektor) användas för att se till att html koden innehåller alternativ text till bilder och att dem stämmer men också knappar med namn och att deras namn också stämmer.
+
+    \subsection{Analysering}
+
+    Allt data som insamlas kommer att jämföras och analyseras med riktlinjerna i både WCAG 2.0 och 2.1.
+    Detta görs för att se om webbsidorna följer dessa riktlinjer eller inte.
+
+
+    \printbibliography
+
+\end{document}
