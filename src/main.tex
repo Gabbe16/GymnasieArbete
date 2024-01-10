@@ -61,6 +61,11 @@
     Jag anser att det skulle vara intressant att undersöka svenska kommunala webbsidor och ifall dem följer tillgänglighetsstandarderna WCAG 2.0 och 2.1 och jämföra dem med andra kommuners webbsidor.
     
     \section{Syfte och Frågeställning}
+    Undersökningen kommer att ta reda på hur sidorna möter kriterier samtidigt som prestanda, tillgänglighet och bästa praxis kommer att mätas med hjälp av ett antal automatiserade tester.
+
+    Syftet för själva undersökningen och varför detta är viktigt att undersöka är för att ge så många som möjligt möjligheten att kunna använda internet på ett tillräckligt bra sätt utan att utsättas för onödiga svårigheter.
+    Detta är speciellt viktigt för de offentliga webbsidorna.
+
     I denna undersökning kommer följande sidor att undersökas:
 
     \begin{itemize}
@@ -77,11 +82,6 @@
         \item Vilka kriterier misslyckades webbsidorna mest med?
         \item Vilken prestanda, tillgänglighet och hur god praxis följer webbsidorna.
     \end{itemize}
-
-    Undersökningen kommer att ta reda på hur sidorna möter kriterierna samtidigt som prestanda, tillgänglighet och bästa praxis kommer att mätas med hjälp av ett antal automatiserade tester.
-
-    Syftet för själva undersökningen och varför detta är viktigt att undersöka är för att ge så många som möjligt möjligheten att kunna använda internet på ett tillräckligt bra sätt utan att utsättas för onödiga svårigheter.
-    Detta är speciellt viktigt för de offentliga webbsidorna.
     
     \section{Bakgrund}
     
@@ -104,8 +104,8 @@
     När något är användbart ska alltså en person som har erfarenheter och förmågor kunna lista ut hur man använder en produkt utan att det ska ta för mycket tid och energi än vad som egentligen behövs.
 
     \subsection{Alt-Taggar}
-    En alt-tagg är en alternativ text till olika element på en webbsida och ska förklara och ge kontext till vad den är kopplad till.
-    Ett bra exempel för detta är på bilder som kan berätta vad som är på bilden och ge kontext varför den är här på sidan \textcite{Nordström}.
+    En alt-tagg är en alternativ text till img element på en webbsida och ska förklara och ge kontext till vad den är kopplad till.
+    Ett bra exempel för detta är text som kan berätta vad som är på bilden och ge kontext varför den är här på sidan \textcite{Nordström}.
 
     \subsection{WAI-ARIA}
     WAI-ARIA används för att göra webbinnehåll mer tillgängligt för personer som använder hjälpmedel som skärmläsare och har blivit en teknisk standard. \textcite{ARIA}
@@ -217,7 +217,7 @@
     Programmet underlättar undersökningen av kraven inom WCAG 2.0 på alla tre nivåer A, AA och AAA.
 
     \subsection{Lighthouse}
-    Sidorna som testas kommer köras 2 gånger med lighthouse för att få så bra data som möjligt på webbsidorna.
+    Sidorna som testas kommer köras 3 gånger med lighthouse för att få så bra data som möjligt på webbsidorna.
     Appar och annat kommer stängas av för att inte påverka och ifall något program är igång kommer det att skrivas ned.
     Sidorna körs två gånger för att kontrollera om det uppstår någon skillnad i resultaten.
 
@@ -232,6 +232,28 @@
 
     Allt data som insamlas kommer att jämföras och analyseras med riktlinjerna i både WCAG 2.0 och 2.1.
     Detta görs för att se om webbsidorna följer dessa riktlinjer eller inte.
+
+    \section{Resultat}
+    
+    \subsection{WCAG 2.0 och 2.1}
+    
+    \subsection{Analysering}
+    
+    \subsubsection{Kriterie 1.1.1, Alternativ text}
+
+    \subsubsection{Kriterie 1.4.3, Kontrast}
+
+    \subsubsection{Kriterie 1.4.4, Ändra storlek på text}
+
+    \subsubsection{Kriterie 2.4.6, Rubriker och etiketter}
+
+    \subsubsection{Kriterie 2.5.3, Inmatningselement}
+
+    \subsection{Lighthouse}
+
+    \section{Diskussion}
+    
+    \section{Slutsatser}
 
 
     \printbibliography
