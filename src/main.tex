@@ -11,6 +11,9 @@
 ]{biblatex}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
+\usepackage{titlesec}
+\usepackage{hyperref}
+
 %Källor
 \addbibresource{references.bib}
 \graphicspath{ {./images/} }
@@ -20,27 +23,60 @@
 \def\foottitle{}
 \def\name{Gabriel Nilsson Högberg}
 
-\title{Webbtillgänglighet: En studie om olika kommunala webbplatser i Sverige \\ \small Gymnasiearbete}
-\author{\name}
-\date{\today}
 
 \begin{document}
+    \begin{titlepage}
+        \centering
 
-% fixar sidfot
-    \lfoot{\footnotesize{\name \\ \email}}
-    \rfoot{\footnotesize{\today}}
-    \lhead{\sc\footnotesize\foottitle}
-    \rhead{\nouppercase{\sc\footnotesize\leftmark}}
-    \pagestyle{fancy}
-    \renewcommand{\headrulewidth}{0.2pt}
-    \renewcommand{\footrulewidth}{0.2pt}
+        \vspace*{1cm}
+
+        % Title and subtitle are enclosed between two rules.
+        \rule{\textwidth}{1pt}
+
+        % Title
+        \vspace{.7\baselineskip}
+        {\huge \textbf{Inte tillgängliga för alla}}
+
+        % Subtitle
+        \vspace*{.5cm}
+        {\LARGE En studie om olika kommunala webbplatsers tillgänglighet}
+
+        \rule{\textwidth}{1pt}
+
+        \vspace{1cm}
+
+        % Set this size for the remaining titlepage.
+        \large
+
+        % Authors side by side, using two minipages as a trick.
+        \begin{minipage}{.5\textwidth}
+            \centering
+            Gabriel Nilsson Högberg \\
+            {\normalsize \url{Gabrielnilsson.hogb@elev.ga.ntig.se}}
+        \end{minipage}%
+
+        \vspace{3cm}
+
+        % Report logo.
+        \includegraphics[width=.7\textwidth]{../images/nti_logo.png}
+
+        \vfill
+
+        % University and date information at the bottom of the titlepage.
+        NTI Gymnasiet Umeå \\
+        Teknikprogrammet\\
+        Gymnasiearbete\\
+        Datum: \today \\
+        Handledare: Jens Andreasson
+    \end{titlepage}
+
+    \tableofcontents
 
 % i Sverige har vi normalt inget indrag vid nytt stycke
     \setlength{\parindent}{0pt}
 % men däremot lite mellanrum
     \setlength{\parskip}{10pt}
 
-    \maketitle
     
     \section{Inledning}
     Webben som vi känner till idag har blivit en av världens mest använda verktyg sedan det släpptes för allmänheten i 1993.
@@ -87,7 +123,14 @@
     
     \subsection{Vad är webbtillgänglighet?}
     Tillgänglighets aspekter kan skilja från person till person men vad exakt tillgänglighet är kan vara svårt att sätta fingret på men för denna studie används Steve Krug och hans egna definition av webbtillgänglighet i sin bok Don't Make Me Think revisited: A Common Sense Approach to Web Usability \textcite{Krug}.
-    Hans definition är följande:
+    Steve Krug är ett UX-proffs som är känd för sin bok "Don't Make Me Think" som handlar om interaktionen mellan människa, dator och användarvänligheten på webben \textcite{Krug_Wikipedia}.
+    Krug leder även ett enmanskonsultföretag som heter Advanced Common Sense.
+
+    Det är inte bara Steve Krug som tänker på detta sätt utan Jakob Nielsen som är konsult inom dator- och webbanvändbarhet som anses vara en av de ledande auktoriteterna inom användbarhet tänker på ett likvärdigt sätt \textcite{Jakob_Nielsen}.
+    Han är känd för sin hård kritik mot populära webbplatser och mot överdriven användning utav grafik och animeringar som inte hjälper användbarheten.
+    Nielsens tio heuritiska principer liknar de punkter som Krug har gjort för sin egna bok.
+
+    Steve Krug och hans egna definition av användbarhet är följande:
 
 
     ``Du kommer hitta olika definitioner av användbarhet men ofta bryts det ned i olika punkter som;``
@@ -109,6 +152,8 @@
 
     \subsection{WAI-ARIA}
     WAI-ARIA används för att göra webbinnehåll mer tillgängligt för personer som använder hjälpmedel som skärmläsare och har blivit en teknisk standard. \textcite{ARIA}
+    Problemet med WAI-ARIA är att det oftast används felaktigt och gör en webbsida mer otillgänglig istället eftersom personer med hjälpmedel ska kunna ta en del av webbplatser används ARIA-attribut som stöd i HTML-kod.
+    Med korrekt användning av WAI-ARIA kan en webbläsare översätta HTML-kod till en skärmläsare som i sin tur läser upp för användaren om till exempel en meny är öppen eller stängd \textcite{7minds}.
 
 
     \subsection{Kontraster}
@@ -116,6 +161,12 @@
     Olika kontrastfel uppstår då det är svårt att se innehållet på grund av färgerna på webbsidan.
     Detta kan vara en text som inte syns på grund av att bakgrundsfärgen har för dålig konstrast jämfört med själva texten.
     Detta gör att ett stort problem uppstår speciellt för de som har synnedsättning eller nedsatt färgseende \textcite{Digg_2021}.
+    Exempel på kontrastfel syns nedan i figur 1.
+
+    \begin{figure}[hbt!]
+        \includegraphics[width=0.8\textwidth]{../images/KontrastExempel.jpg}
+        \caption{ Kontrastexempel 1 }
+    \end{figure}
 
     \section{Vad är World Wide Web Consortium? (W3C)}
     World Wide Web Consortium även förkortat till W3C skapades av Tim Burners-Lee och arbetar med att skapa en webb som är tillgänglig för alla.
@@ -150,7 +201,15 @@
     \end{itemize}
 
     \textcite{WAI}
-    
+
+    \subsection{Testverktyg}
+
+    \begin{itemize}
+        \item AChecker
+        \item WAVE
+        \item Lighthouse
+    \end{itemize}
+
     \subsection{AChecker}
     AChecker är ett tillgänglighetsverktyg som Web Accessibility Initiative (WAI) beskriver som.
 
@@ -236,24 +295,138 @@
     \section{Resultat}
     
     \subsection{WCAG 2.0 och 2.1}
-    
+    Det mest vanliga kriteriet som webbsidorna inte når upp till är 1.1.1.
+    Kriteriet förklarar att alternativ text ska finnas på bilder.
+    Det andra kriteriet som inte webbsidorna häller når upp till är 2.5.3 som innebär att all inmatningselement med text eller bild ska ha likadana namn, detta gör att det blir enklare att använda röstinmatning.
+    Till sist är det kriterium 2.4.6 som innebär att rubriker och etiketter för formulär och interaktiva kontroller ska vara informativa.
+    Antalet gånger som webbsidorna misslyckades med dessa kriterier syns i figur 2.
+
+    \begin{figure}[hbt!]
+        \includegraphics[width=0.8\textwidth]{../images/antalmisslyckande.jpg}
+        \caption{ Antal misslyckande på kriterier }
+    \end{figure}
+
     \subsection{Analysering}
     
-    \subsubsection{Kriterie 1.1.1, Alternativ text}
+    \subsubsection{Kriteriet 1.1.1, Alternativ text}
+    Kriteriet 1.1.1 hanterar allt innehåll som inte är text och om det finns på sidan ska den ha ett textalternativ.
+    Innehållet som kategoriseras i kriteriet 1.1.1 är följande:
 
-    \subsubsection{Kriterie 1.4.3, Kontrast}
+    \begin{itemize}
+        \item Bilder som är aktiva på sidan
+        \item Interaktiva bilder
+        \item Informativa bilder
+        \item CSS bilder
+        \item Dekorativa bilder
+        \item Komplexa grafer och diagram
+        \item Kartor
+        \item Inmatningskontroll bilder (t.ex en knapp som ser ut som en bild istället för att ha text)
+        \item CAPTCHA (Completely Automated Public Turing test to tell Computers and Humans Apart)
+        \item Ljud och video innehåll
+    \end{itemize}
 
-    \subsubsection{Kriterie 1.4.4, Ändra storlek på text}
+    Efter analyseringen av webbsidornas resultat så visade det sig att alla webbsidor inte klarade av detta kriteriet eftersom det var minst ett misslyckande per sida.
+    Bilderna som orsakade att detta kriteriet inte uppnåddes hade inte fullständiga alternativa texter eller text runt om som kunde förklara bilderna.
+    Resultatet efter denna analys är; eslov.se 8 misslyckande, goteborg.se 7, helsingborg.se 4 och huddinge.se 1.
+    Nedan är bilder på webbsidorna där det syns vad exakt som misslyckades och detta syns i figurerna 3 och 4
 
-    \subsubsection{Kriterie 2.4.6, Rubriker och etiketter}
+    \begin{figure}[hbt!]
+        \includegraphics[width=0.8\textwidth]{../images/Eslov111.jpg}
+        \caption{ Eslov.se misslyckande av kriteriet 1.1.1 }
+    \end{figure}
 
-    \subsubsection{Kriterie 2.5.3, Inmatningselement}
+    \begin{figure}[hbt!]
+        \includegraphics[width=0.8\textwidth]{../images/Goteborg111.jpg}
+        \caption{ Goteborg.se misslyckande av kriteriet 1.1.1 }
+    \end{figure}
 
+    \subsubsection{Kriteriet 2.4.6, Rubriker och etiketter}
+    Kriteriet 2.4.6 hanterar innehåll som rubriker eller etiketter på en webbsida och om detta finns ska dem vara informativa eftersom detta hjälper de som använder sig utav skärmläsare och hoppar mellan rubriker.
+    Detta kriteriet involverar inte att man ska använda sig utav rubriker och etiketter utan bara om de används ska de användas på rätt sätt, skrivna tydligt och meningsfullt.
+
+    Efter analyseringen av webbsidornas resultat visade det sig att goteborg.se klarade av detta kriterier, samt tas bort från deras resultat
+    goteborg.se har rubriker och etiketter som är skrivna tydligt och är meningsfulla.
+    Eslov.se och huddinge.se har en rubrik som inte har någon text vilket gör att den inte är tydlig eller meningsfull.
+    Helsingborg.se har en etikett till ett formulär som saknar en meningsfull text som gör att skärmläsare inte kan visa denna information korrekt.
+    Rubrikerna och etiketterna som orsakade att detta kriteriet inte uppnåddes hade icke fullständiga rubriker och etiketter som inte var tillräckligt tydliga eller meningsfulla.
+    Resultatet efter denna analys är; goteborg.se 0 misslyckande, eslov.se 1, huddinge.se 1 och helsingborg.se 1.
+    Nedan syns bilderna ifrån de webbsidorna som misslyckade med kriteriet och detta är figurerna 5, 6 och 7.
+
+    \begin{figure}[hbt!]
+        \includegraphics[width=0.8\textwidth]{../images/Eslov246.jpg}
+        \caption{ Eslov.se misslyckande av kriteriet 2.4.6 }
+    \end{figure}
+
+    \begin{figure}[hbt!]
+        \includegraphics[width=0.8\textwidth]{../images/Huddinge246.jpg}
+        \caption{ Huddinge.se misslyckande av kriteriet 2.4.6 }
+    \end{figure}
+
+    \begin{figure}[hbt!]
+        \includegraphics[width=0.8\textwidth]{../images/Helsingborg246.jpg}
+        \caption{ Helsingborg.se misslyckande av 2.4.6 }
+    \end{figure}
+
+    \subsubsection{Kriteriet 2.5.3, Inmatningselement}
+    Kriteriet 2.5.3, hanterar innehåll som interaktiva element som till exempel knappar.
+    Dessa element ska ha en alternativ etikett eller så måste etiketten ha samma namn som texten på elementet, detta är för att röstinmatning ska kunna hitta elementen.
+    Om etiketten inte är detsamma som texten blir det svårt att använda röstinmatning för att navigera webbsidor.
+
+    Exempel kommer att visas från varje sida som inte uppfyllde kriteriet och sedan kommer det förklaras varför i figurens bildtext.
+    eslov.se, helsingborg.se och goteborg.se hade felet att namnet på knapparna är fel som visas i figurer 8, 9 och 10
+
+    \begin{figure}[hbt!]
+        \includegraphics[width=0.8\textwidth]{../images/Eslov253.jpg}
+        \caption{ Eslov.se med en knapp som inte har ett namn }
+    \end{figure}
+
+    \begin{figure}[hbt!]
+        \includegraphics[width=0.8\textwidth]{../images/Goteborg253.jpg}
+        \caption{ Goteborg.se med en knapp som inte har ett namn }
+    \end{figure}
+
+    \begin{figure}[hbt!]
+        \includegraphics[width=0.8\textwidth]{../images/Helsingborg253.jpg}
+        \caption{ Helsingborg.se med en knapp som inte har ett namn }
+    \end{figure}
+<
     \subsection{Lighthouse}
 
+    Resultatet från Lighthouse testerna kommer att visa sidornas prestanda, tillgänglighet och hur de arbetar utifrån bästa praxis.
+    Undersökningen resulterade i att alla webbsidor hade högt medelvärde i prestanda och praxis.
+    Dock så hade goteborg.se och helsingborg.se betydligt lägre tillgänglighet ifall man jämför med resten av sidorna och detta syns i figur 11
+
+    \begin{figure}[hbt!]
+        \includegraphics[width=0.8\textwidth]{../images/Medelvarde.jpg}
+        \caption{ Medelvärdet på lighthouse testerna utfört på dator versionen }
+    \end{figure}
+
+    Webbsidorna med lägst medelvärde på tillgänglighet var goteborg.se och helsingborg.se som endast hade 74 respektive 77 poäng utav 100.
+    Utöver det uppnådde de flesta webbsidorna över 80 poäng om inte mer på prestanda och praxis.
+    Webbsidan med bäst lighthouse resultat på datorn är eslov.se.
+
     \section{Diskussion}
+    Baserat på undersökningens frågeställning och det resultat som undersökningen framställde så vill jag diskutera delar av resultatet.
+    Utifrån frågan om sidorna kunde uppfylla tillgänglighetskraven WCAG 2.1, var de flesta kraven uppfyllda utom några enstaka på alla webbsidor.
+    Det var få krav som inte uppfylldes vilket var positivt överraskande.
+    Alla webbsidor klarade inte av kriteriet 1.1.1 inom WCAG 2.0 vilket syns i figur [NUMMER].
+    Alternativ text kan vara en enkel sak som många utvecklare av sidor kan missa eller inte uppfylls helt.
+    Det finns program som kan användas för att förenkla denna process med att skriva alt-taggarna.
+    Däremot är det också viktigt att nämna att det inte behöver vara utvecklarna av sidan som orsakade denna miss.
+    Det kan vara den person som hanterar text eller innehåll på sidan som inte gav utvecklaren den alternativa texten som behövs.
+    Webbsidor kan också använda sig utav att gömma denna typ av innehåll när skärmläsare skulle användas, dock så går det att argumentera om detta är en tillräckligt bra lösning på problemet.
+
+    Den oroväckande trenden att webbsidorna inte klarar av att ha samma namn som sina input element som visas visuellt (kriterium 2.5.3).
+    Kriteriet kräver att alla inmatningselement med text eller bild ska ha samma namn.
+    Detta görs för att förenkla användningen av röstinmatning.
+    Alla sidor förutom huddinge.se hade en del på sidan som inte klarade av detta kriteriet på olika sätt.
+    Detta går även för kriteriet 1.1.1 och alla webbsidor som jag undersökt med alternativ text istället och detta väcker frågan om hur mycket detta faktiskt prioriteras.
     
     \section{Slutsatser}
+    I det stora hela hittades få problem med webbsidorna och det var få kriterier som inte uppfylldes vilket var positivt.
+    Däremot bör de problem som hittades förbättras för att få mer tillgängliga sidor.
+    Förbättringar som skulle kunna göras för en liknande studie skulle kunna vara att använda sig utav nya WCAG 2.2 eller WCAG 3.0 som håller på att utvecklas fortfarande för att bli den nya webbstandarden.
+    En djupare undersökning på webbsidornas olika sidor skulle även göra ett mer utförligt arbete.
 
 
     \printbibliography
