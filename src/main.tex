@@ -174,7 +174,7 @@
     Ett av de vanligare felen som kan uppstå på en webbsida är dåliga kontraster.
     Olika kontrastfel uppstår då det är svårt att se innehållet på en webbsida när färgerna liknar varandra.
     Detta kan till exempel vara en text som inte syns på grund av att bakgrundsfärgen har för dålig konstrast jämfört med själva texten.
-    Detta gör att ett stort problem uppstår speciellt för de som har synnedsättning eller nedsatt färgseende \textcite{Digg_2021}.
+    Det gör att ett stort problem uppstår speciellt för de som har synnedsättning eller nedsatt färgseende \textcite{Digg_2021}.
     Exempel på kontrastfel syns nedan i figur 1.
 
     \begin{figure}[hbt!]
@@ -261,6 +261,9 @@
     Till sist kommer Lighthouse användas för att hitta problem som inte kan hittas av utvärderingsverktyg eller den manuella kontrollen.
 
     \subsection{Val av sidor}
+    De sidor som valdes anses vara fyra av de bästa kommunerna som finns på nätet enligt ComputerSweden under 2020.
+    Utifrån det tankesättet är det viktigt att se ifall sidorna fortfarande håller upp till tillgänglighetsstandarderna.
+
     Sidorna som valdes för denna undersökning är:
 
     \begin{itemize}
@@ -269,6 +272,8 @@
         \item helsingborg.se
         \item huddinge.se
     \end{itemize}
+
+    \section{Testverktygens användning}
 
     \subsection{AChecker}
     AChecker är en rekommendation från \textcite{AChecker} och används som en av tillgänglighets programmen för webbutvecklare.
@@ -296,13 +301,14 @@
     \subsection{WCAG 2.0 och 2.1}
     Det mest vanliga kriteriet som webbsidorna inte når upp till är 1.1.1.
     Kriteriet förklarar att alternativ text ska finnas på bilder.
-    Det andra kriteriet som inte webbsidorna häller når upp till är 2.5.3 som innebär att all inmatningselement med text eller bild ska ha likadana namn, detta gör att det blir enklare att använda röstinmatning.
+    Det andra kriteriet som inte häller webbsidorna når upp till är 2.5.3. Kriteriet innebär att alla inmatningselement som t.ex länkar eller knappar som visar text eller bild med text ska ha en alternativ etikett med likadant namn.
+    Detta gör att det blir enklare att använda röstinmatning och hitta element som sedan kan läsas upp för att navigera webbsidor.
     Till sist är det kriterium 2.4.6 som innebär att rubriker och etiketter för formulär och interaktiva kontroller ska vara informativa.
     Antalet gånger som webbsidorna misslyckades med dessa kriterier syns i figur 2.
 
     \begin{figure}[hbt!]
         \includegraphics[width=0.8\textwidth]{../images/antalmisslyckande.jpg}
-        \caption{ Antal misslyckande på kriterier }
+        \caption{ Antal misslyckande på kriterier 1.1.1, 2.4.6 och 2.5.3 }
     \end{figure}
 
     \subsection{Analysering}
@@ -326,44 +332,53 @@
 
     Efter analyseringen av webbsidornas resultat så visade det sig att alla webbsidor inte klarade av detta kriteriet eftersom det var minst ett misslyckande per sida.
     Bilderna som orsakade att detta kriteriet inte uppnåddes hade inte fullständiga alternativa texter eller text runt om som kunde förklara bilderna.
-    Resultatet efter denna analys är; eslov.se 8 misslyckande, goteborg.se 7, helsingborg.se 4 och huddinge.se 1.
-    Nedan är bilder på webbsidorna där det syns vad exakt som misslyckades och detta syns i figurerna 3 och 4
+    Resultatet efter denna analys syns i figur 3.
+    I figurerna 4 och 5 är det exempel på några av webbsidorna där det syns vad exakt som kan misslyckas.
+
+    \begin{figure}[hbt!]
+        \includegraphics[width=0.8\textwidth]{../images/resultat111.jpg}
+        \caption{ Resultat av kriteriet 1.1.1 }
+    \end{figure}
 
     \begin{figure}[hbt!]
         \includegraphics[width=0.8\textwidth]{../images/Eslov111.jpg}
-        \caption{ Eslov.se misslyckande av kriteriet 1.1.1 }
+        \caption{ Eslov.se med en bild som inte har ett alternativt namn }
     \end{figure}
 
     \begin{figure}[hbt!]
         \includegraphics[width=0.8\textwidth]{../images/Goteborg111.jpg}
-        \caption{ Goteborg.se misslyckande av kriteriet 1.1.1 }
+        \caption{ Goteborg.se med en bild som inte har ett alternativt namn }
     \end{figure}
 
     \subsubsection{Kriteriet 2.4.6, Rubriker och etiketter}
-    Kriteriet 2.4.6 hanterar innehåll som rubriker eller etiketter på en webbsida och om detta finns ska dem vara informativa eftersom detta hjälper de som använder sig utav skärmläsare och hoppar mellan rubriker.
-    Detta kriteriet involverar inte att man ska använda sig utav rubriker och etiketter utan bara om de används ska de användas på rätt sätt, skrivna tydligt och meningsfullt.
+    Kriteriet 2.4.6 handlar om rubriker eller etiketter på en webbsida och om detta finns ska dem vara informativa eftersom detta hjälper de som använder sig utav skärmläsare.
+    Detta kriteriet innehåller inte att man ska använda sig utav rubriker och etiketter utan bara om de används ska de användas på rätt sätt, skrivna tydligt och meningsfullt.
+    Däremot är det mer eller mindre ett krav för användbarheten.
 
-    Efter analyseringen av webbsidornas resultat visade det sig att goteborg.se klarade av detta kriterier, samt tas bort från deras resultat
-    goteborg.se har rubriker och etiketter som är skrivna tydligt och är meningsfulla.
     Eslov.se och huddinge.se har en rubrik som inte har någon text vilket gör att den inte är tydlig eller meningsfull.
     Helsingborg.se har en etikett till ett formulär som saknar en meningsfull text som gör att skärmläsare inte kan visa denna information korrekt.
     Rubrikerna och etiketterna som orsakade att detta kriteriet inte uppnåddes hade icke fullständiga rubriker och etiketter som inte var tillräckligt tydliga eller meningsfulla.
-    Resultatet efter denna analys är; goteborg.se 0 misslyckande, eslov.se 1, huddinge.se 1 och helsingborg.se 1.
-    Nedan syns bilderna ifrån de webbsidorna som misslyckade med kriteriet och detta är figurerna 5, 6 och 7.
+    Resultatet efter denna analys syns i figur 5.
+    I figurerna 6, 7 och 8 synds det exempel från några webbsidor vad som misslyckades.
+
+    \begin{figure}[hbt!]
+        \includegraphics[width=0.8\textwidth]{../images/resultat246.jpg}
+        \caption{ Resultat av kriteriet 2.4.6 }
+    \end{figure}
 
     \begin{figure}[hbt!]
         \includegraphics[width=0.8\textwidth]{../images/Eslov246.jpg}
-        \caption{ Eslov.se misslyckande av kriteriet 2.4.6 }
+        \caption{ Eslov.se med en rubrik som inte innehåller något }
     \end{figure}
 
     \begin{figure}[hbt!]
         \includegraphics[width=0.8\textwidth]{../images/Huddinge246.jpg}
-        \caption{ Huddinge.se misslyckande av kriteriet 2.4.6 }
+        \caption{ Huddinge.se med en rubrik som inte innehåller något }
     \end{figure}
 
     \begin{figure}[hbt!]
         \includegraphics[width=0.8\textwidth]{../images/Helsingborg246.jpg}
-        \caption{ Helsingborg.se misslyckande av 2.4.6 }
+        \caption{ Helsingborg.se med ett formulär utan etikett }
     \end{figure}
 
     \subsubsection{Kriteriet 2.5.3, Inmatningselement}
@@ -371,29 +386,35 @@
     Dessa element ska ha en alternativ etikett eller så måste etiketten ha samma namn som texten på elementet, detta är för att röstinmatning ska kunna hitta elementen.
     Om etiketten inte är detsamma som texten blir det svårt att använda röstinmatning för att navigera webbsidor.
 
+    Resultatet efter denna analys syns i figur 8.
     Exempel kommer att visas från varje sida som inte uppfyllde kriteriet och sedan kommer det förklaras varför i figurens bildtext.
-    eslov.se, helsingborg.se och goteborg.se hade felet att namnet på knapparna är fel som visas i figurer 8, 9 och 10
+    eslov.se, helsingborg.se och goteborg.se hade felet att namnet på knapparna är fel som visas i figurer 9, 10 och 11
+
+    \begin{figure}[hbt!]
+        \includegraphics[width=0.8\textwidth]{../images/resultat253.jpg}
+        \caption{ Resultat av kriteriet 2.5.3 }
+    \end{figure}
 
     \begin{figure}[hbt!]
         \includegraphics[width=0.8\textwidth]{../images/Eslov253.jpg}
-        \caption{ Eslov.se med en knapp som inte har ett namn }
+        \caption{ Eslov.se med en knapp som inte har ett alternativt namn }
     \end{figure}
 
     \begin{figure}[hbt!]
         \includegraphics[width=0.8\textwidth]{../images/Goteborg253.jpg}
-        \caption{ Goteborg.se med en knapp som inte har ett namn }
+        \caption{ Goteborg.se med en knapp som inte har ett alternativt namn }
     \end{figure}
 
     \begin{figure}[hbt!]
         \includegraphics[width=0.8\textwidth]{../images/Helsingborg253.jpg}
-        \caption{ Helsingborg.se med en knapp som inte har ett namn }
+        \caption{ Helsingborg.se med en knapp som inte har ett alternativt namn }
     \end{figure}
 <
     \subsection{Lighthouse}
 
     Resultatet från Lighthouse testerna kommer att visa sidornas prestanda, tillgänglighet och hur de arbetar utifrån bästa praxis.
-    Undersökningen resulterade i att alla webbsidor hade högt medelvärde i prestanda och praxis.
-    Dock så hade goteborg.se och helsingborg.se betydligt lägre tillgänglighet ifall man jämför med resten av sidorna och detta syns i figur 11
+    Resultaten från undersökningen visade att alla webbsidor hade högt medelvärde i prestanda och praxis.
+    Däremot så hade goteborg.se och helsingborg.se betydligt lägre tillgänglighet ifall man jämför med resten av sidorna och detta syns i figur 12
 
     \begin{figure}[hbt!]
         \includegraphics[width=0.8\textwidth]{../images/Medelvarde.jpg}
@@ -408,14 +429,15 @@
     Baserat på undersökningens frågeställning och det resultat som undersökningen framställde så vill jag diskutera delar av resultatet.
     Utifrån frågan om sidorna kunde uppfylla tillgänglighetskraven WCAG 2.1, var de flesta kraven uppfyllda utom några enstaka på alla webbsidor.
     Det var få krav som inte uppfylldes vilket var positivt överraskande.
-    Alla webbsidor klarade inte av kriteriet 1.1.1 inom WCAG 2.0 vilket syns i figur [NUMMER].
+    Alla webbsidor klarade inte av kriteriet 1.1.1 inom WCAG 2.0 vilket syns i figur 3.
     Alternativ text kan vara en enkel sak som många utvecklare av sidor kan missa eller inte uppfylls helt.
     Det finns program som kan användas för att förenkla denna process med att skriva alt-taggarna.
     Däremot är det också viktigt att nämna att det inte behöver vara utvecklarna av sidan som orsakade denna miss.
     Det kan vara den person som hanterar text eller innehåll på sidan som inte gav utvecklaren den alternativa texten som behövs.
     Webbsidor kan också använda sig utav att gömma denna typ av innehåll när skärmläsare skulle användas, dock så går det att argumentera om detta är en tillräckligt bra lösning på problemet.
+    Det innebär alltså att det kan vara ett designval eller liknande som man utvecklarna själva väljer att göra.
 
-    Den oroväckande trenden att webbsidorna inte klarar av att ha samma namn som sina input element som visas visuellt (kriterium 2.5.3).
+    Det är en oroväckande trend att webbsidorna inte klarar av att ha samma alternativt text som visas visuellt med till exempel länkar och knappar enligt kriteriet 2.5.3.
     Kriteriet kräver att alla inmatningselement med text eller bild ska ha samma namn.
     Detta görs för att förenkla användningen av röstinmatning.
     Alla sidor förutom huddinge.se hade en del på sidan som inte klarade av detta kriteriet på olika sätt.
