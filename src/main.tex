@@ -75,27 +75,27 @@
         \vspace{0.9cm}
         \textbf{Abstract}
     \end{center}
-    In Sweden, around 95 percent use the internet \textcite{SCB} and the fact that so many people use the internet places ever greater demands.
+    In Sweden, around 95 percent used the internet in 2022 \textcite{SCB} and the fact that so many people used the internet placed ever greater demands.
     This means that the websites must work and ensure that everyone can use them in a convenient way.
-    The purpose of the analysis is to find out how well communal websites follow accessibility guidelines.
-    This is especially important for public websites because there are laws and requirements for accessibility when it comes to the web.
+    The purpose of the analysis was to investigate how well communal websites followed accessibility guidelines.
+    This was especially important for public websites because there are laws and requirements for accessibility when it comes to the web.
 
-    A manual test will be done because there are no good tools that check the WCAG 2.1 criteria.
-    WAVE will be used to streamline manual analysis with contrasts, ARIA references and alt tags.
-    Finally, Lighthouse will be used to find issues that cannot be found by evaluation tools or the manual check.
+    A manual test was done because there are no good tools that check the WCAG 2.1 criteria.
+    WAVE was used to streamline manual analysis with contrasts, ARIA references and alt tags.
+    Finally, Lighthouse was used to find issues that cannot be found by evaluation tools or the manual check.
 
-    The most common criteria that the web pages do not reach is 1.1.1, 2.5.3 and 2.4.6.
-    These criterias explain that alternative text must be present on images, input elements such as links or buttons need to have an alternative text that matches the text on the button or link and that header and labels for forms and interactive controls are informative.
+    The most common criteria that the web pages did not reach was 1.1.1, 2.5.3 and 2.4.6.
+    These criterias explained that alternative text must be present on images, input elements such as links or buttons need to have an alternative text that matches the text on the button or link and that header and labels for forms and interactive controls are informative.
 
     Most of the requirements were met except for a few on all web pages.
     Not all web pages passed criteria 1.1.1 within WCAG 2.0.
     Alternative text can be a simple thing that many page developers may miss or not fully meet.
-    Although it is a worrying trend that the web pages are not able to have the same alternative text that is displayed visually with, for example, links and buttons according to criteria 2.5.3.
+    Although it was a worrying trend that the web pages were not able to have the same alternative text that is displayed visually with, for example, links and buttons according to criteria 2.5.3.
 
     Few problems were found with the web pages and the problems found should be improved to get more accessible pages.
-    The DOS law contains requirements to be achieved and the Authority for Digital Management recommends following the European standard EN 301 549 which refers to WCAG 2.1 at AA level.
+    The DOS law contains requirements to be achieved and the Authority for Digital Management recommended following the European standard EN 301 549 which referred to WCAG 2.1 at AA level.
     Improvements that could be made for a similar study could be to make use of the new WCAG 2.2 or WCAG 3.0 which is being developed to become the new web standard.
-    A deeper investigation on the various pages of the web pages would also make for a more detailed work.
+    A deeper investigation on the various pages of the web pages could also make for a more detailed work.
 
     \newpage
     \tableofcontents
@@ -107,13 +107,13 @@
 
     
     \section{Inledning}
-    Webben som vi känner till idag har blivit en av världens mest använda verktyg när det släpptes för allmänheten 1993.
+    Webben som vi känner till idag har blivit en av världens mest använda verktyg sedan det släpptes för allmänheten 1993.
     I världen är det runt 4,39 miljarder personer som använder sig av internet vilket är över hälften av den globala populationen \textcite{history_WWW}.
     I Sverige är det runt 95 procent som använder sig av internet \textcite{SCB} och att så många personer använder internet ställer allt större krav.
     Detta innebär att webbplatserna ska fungera och att alla kan använda dem på ett bekvämt sätt.
     Det gör även att det ställs ett större krav på att webbsidorna ska vara tillgängliga.
     Ett stort ansvar hamnar då på de som utvecklar kommunala webbsidor att webbplatsen ska vara tillgänglig oavsett vilken enhet man använder.
-    Ett extremt stort spektrum av behov behövs täckas för att kalla en webbsida tillgänglig.
+    Ett extremt stort spektrum av behov behöver täckas för att kalla en webbsida tillgänglig.
 
     Den svenska myndigheten för digital förvaltning (DIGG) ger denna anledning till varför fokuset på tillgänglighet är viktigt:
 
@@ -129,8 +129,7 @@
     Undersökningen syftar till att ta reda på hur sidorna möter kriterier samtidigt som prestanda, tillgänglighet och bästa praxis kommer att mätas med hjälp av ett antal automatiserade tester.
 
     Syftet för undersökningen är att ta reda på hur väl kommunala webbplatser följer tillgänglighetsriktlinjer.
-    Detta är viktigt för att så många som möjligt ska kunna använda internet på ett tillräckligt bra sätt utan svårigheter.
-    Detta är speciellt viktigt för de offentliga webbsidorna eftersom det är lag och krav på tillgänglighet när det kommer till webben.
+    Detta är viktigt för att så många som möjligt ska kunna använda internet på ett tillräckligt bra sätt utan svårigheter och för de offentliga webbsidorna eftersom det är lag och krav på tillgänglighet när det kommer till webben.
 
     I denna undersökning kommer följande kommunala sidor att undersökas:
 
@@ -154,7 +153,7 @@
     \subsection{Vad är webbtillgänglighet?}
     Tillgänglighets aspekter kan skilja från person till person men vad exakt tillgänglighet är kan vara svårt att sätta fingret på.
     För denna studie används Steve Krug och hans egna definition av webbtillgänglighet i sin bok Don't Make Me Think revisited: A Common Sense Approach to Web Usability \textcite{Krug}.
-    Steve Krug är ett UX-proffs som är känd för sin bok "Don't Make Me Think" som handlar om interaktionen mellan människa, dator och användarvänligheten på webben \textcite{Krug_Wikipedia}.
+    Steve Krug är ett UX-proffs som är känd för sin bok ``Don't Make Me Think`` som handlar om interaktionen mellan människa, dator och användarvänligheten på webben \textcite{Krug_Wikipedia}.
 
     Det är inte bara Steve Krug som tänker på detta sätt.
     Jakob Nielsen som är konsult inom dator- och webbanvändbarhet anses vara en av de ledande auktoriteterna inom användbarhet och tänker på ett likvärdigt sätt som Steve Krug \textcite{Jakob_Nielsen}.
@@ -277,20 +276,20 @@
 
     \section{Metod}
     Tillgänglighetsstandarden idag har utökats enormt och förbättrar användarupplevelsen för alla.
-    Inom Sverige har vi WCAG som riktlinjer och webbsidor bör följa och även uppnå de krav som riktlinjerna ger \textcite{Digg}.
+    Inom Sverige finns WCAG som riktlinjer och webbsidor bör följa och även uppnå de krav som riktlinjerna ger \textcite{Digg}.
     Det är för allas bästa att dessa används för att förbättra sina och andras webbsidor så att alla kan använda dem.
 
     \begin{itemize}
-        \item Med hjälp av programmet AChecker går det att kontrollera en webbsida på WCAG 2.0 kraven och alla tre nivåer A, AA och AAA. Dessa nivåer anger ambitionsnivån på sidan och grunden för tillgänglighetskrav är AA.
-        \item Ett manuellt test kommer att göras för att utöka kraven till WCAG 2.1, alltså krav som inte står i WCAG 2.0 med hjälp av WAVE.
-        \item Det manuella testet kommer att undersöka ifall ARIA-referenser fungerar och om det finns alt-taggar på bilder, loggor och mer.
-        \item Lighthouse kommer att användas för att kolla sidornas prestanda, tillgänglighet och praxis.
+        \item Med hjälp av programmet AChecker kontrollerades en webbsida på WCAG 2.0 kraven och alla tre nivåer A, AA och AAA. Dessa nivåer angav ambitionsnivån på sidan och grunden för tillgänglighetskrav är AA.
+        \item Ett manuellt test gjordes för att utöka kraven till WCAG 2.1, alltså krav som inte står i WCAG 2.0 med hjälp av WAVE.
+        \item Det manuella testet undersökte ifall ARIA-referenser fungerar och om det fanns alt-taggar på bilder, loggor och mer.
+        \item Lighthouse användes för att kolla sidornas prestanda, tillgänglighet och praxis.
     \end{itemize}
 
-    För att undvika mänskliga misstag under undersökningen används utvärderingsverktyg.
-    Det manuella testet kommer att göras eftersom det inte finns tillräckligt bra verktyg som kontrollerar WCAG 2.1 kriterierna.
-    WAVE kommer att användas för att effektivisera manuella undersökningen med kontraster, ARIA-referenser och alt-taggar.
-    Till sist kommer Lighthouse användas för att hitta problem som inte kan hittas av utvärderingsverktyg eller den manuella kontrollen.
+    För att undvika mänskliga misstag under undersökningen användes utvärderingsverktyg.
+    Det manuella testet gjordes eftersom det inte finns tillräckligt bra verktyg som kontrollerade WCAG 2.1 kriterierna.
+    WAVE användes för att effektivisera den manuella undersökningen med kontraster, ARIA-referenser och alt-taggar.
+    Till sist användes Lighthouse för att hitta problem som inte kunde hittas av utvärderingsverktyg eller den manuella kontrollen.
 
     \subsection{Val av sidor}
     De sidor som valdes anses vara fyra av de bästa kommunerna som finns på nätet enligt ComputerSweden under 2020.
